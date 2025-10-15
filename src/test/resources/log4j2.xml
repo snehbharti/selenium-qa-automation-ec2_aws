@@ -14,9 +14,8 @@
         <!-- CloudWatch Appender (new) -->
         <CloudWatch name="CloudWatch"
                     logGroup="Selenium-Automation-Logs"
-                    logStream="Run-%d{yyyy-MM-dd_HH-mm-ss}"
+                    logStream="Run-01"
                     region="ap-south-1"
-                    autoCreateGroup="true"
                     async="true">
             <PatternLayout>
                 <Pattern>%d{yyyy-MM-dd HH:mm:ss} %-5p %c{1}:%L - %m%n</Pattern>
