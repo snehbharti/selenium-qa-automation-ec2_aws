@@ -9,7 +9,7 @@ public class LoginFeature extends BaseTest {
 
 	@Test
 	public void verifyCurrentUrl() {
-		String currentUrl = driver.getCurrentUrl();
+		String currentUrl = driver.get().getCurrentUrl();
 		logger.info("Current URL: {}", currentUrl);
 		if (!currentUrl.contains("https://www.flipkart.com/")) {
 			logger.warn("Current URL mismatch! Expected Flipkart URL.");
@@ -17,14 +17,14 @@ public class LoginFeature extends BaseTest {
 		} else {
 			logger.info("✅ Current URL is correct.");
 		}
-		Utility.takeScreenshot(driver, "verifyCurrentUrl");
+		Utility.takeScreenshot(driver.get(), "verifyCurrentUrl");
 		sa.assertAll();
 
 	}
 
 	@Test
 	public void verifyTitle() {
-		String pageTitle = driver.getTitle();
+		String pageTitle = driver.get().getTitle();
 		logger.info("Page Title: {}", pageTitle);
 		sa.assertEquals(pageTitle,
 				"Online Shopping Site for Mobiles, Electronics, Furniture, Grocery, Lifestyle, Books & More. Best Offers!");
