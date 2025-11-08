@@ -15,6 +15,23 @@ import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 
 public class BaseTest {
+	
+	/*
+	 * final suggestion: private static ThreadLocal<WebDriver> driver = new
+	 * ThreadLocal<>();
+	 * 
+	 * protected WebDriver getDriver() { return driver.get(); }
+	 * 
+	 * 
+	 * then child classes ONLY use:
+	 * 
+	 * getDriver().findElement(...) getDriver().get(...) getDriver().quit()
+	 * 
+	 * One line summary
+	 * 
+	 * protected se bhi chalega, par private rakhna best — thread local direct
+	 * expose mat karo, hamesha getDriver() se WebDriver do.
+	 */
 
 	// protected WebDriver driver;   // ❌ remove this line as we are making parallel by selenium grid on aws
 
@@ -51,7 +68,7 @@ public class BaseTest {
 	        );*/
 		  
 		  driver.set(new RemoteWebDriver(
-	                new URL("http:// 15.207.197.153:4444/wd/hub"),options ));
+	                new URL("http://15.207.197.153:4444/wd/hub"),options ));
 		  
 		  
 //		\\===========================================================//
