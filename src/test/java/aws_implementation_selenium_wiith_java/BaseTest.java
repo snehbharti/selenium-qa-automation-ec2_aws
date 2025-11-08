@@ -67,8 +67,8 @@ public class BaseTest {
 	                options
 	        );*/
 		  
-		  driver.set(new RemoteWebDriver(
-	                new URL("http://localhost:4444/wd/hub"),options ));
+		driver.set(new RemoteWebDriver(
+		        new URL("http://15.207.197.153:4444/wd/hub"), options));
 		  
 		  
 //		\\===========================================================//
